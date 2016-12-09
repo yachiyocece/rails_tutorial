@@ -1,8 +1,16 @@
 SampleApp::Application.routes.draw do
-  get "static_pages/home", as: 'home'
-  get "static_pages/help", as: 'help'
-  get "static_pages/about", as: 'about'
-  get "static_pages/contact", as: 'contact'
+  # newnew get "users/new"
+  # get "static_pages/home", as: 'home'
+  #  get "static_pages/help", as: 'help'
+  #  get "static_pages/about", as: 'about'
+  #  get "static_pages/contact", as: 'contact'
+
+root 'static_pages#home' #ルートに来た時
+ match '/signup', to: 'users#new', via: 'get'
+ match '/help', to: 'static_pages#help', via: 'get'
+ match '/about', to: 'static_pages#about', via: 'get'
+ match '/contact', to: 'static_pages#contact', via: 'get'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
